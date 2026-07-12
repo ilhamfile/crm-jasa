@@ -1,0 +1,605 @@
+/* ==========================================================
+   PT. LENTERA STATISTICS INDONESIA
+   Dashboard CSS v3.0
+   Part 1
+========================================================== */
+
+/* ---   ROOT --- */
+
+:root{
+    --primary:#2563eb;
+    --primary-dark:#1d4ed8;
+    --success:#16a34a;
+    --warning:#f59e0b;
+    --danger:#dc2626;
+    --info:#0ea5e9;
+    --dark:#0f172a;
+    --text:#334155;
+    --muted:#64748b;
+    --bg:#f8fafc;
+    --card:#ffffff;
+    --border:#e5e7eb;
+    --radius:18px;
+    --radius-sm:12px;
+    --shadow:0 8px 30px rgba(15,23,42,.06);
+    --shadow-hover:0 18px 40px rgba(15,23,42,.12);
+    --transition:.25s ease;
+}
+
+/* ==========================================================
+BODY
+========================================================== */
+
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:15px;line-height:1.6}
+
+/* ==========================================================
+LAYOUT
+========================================================== */
+
+.dashboard-container{max-width:1600px;margin:auto;padding:30px}
+
+/* ==========================================================
+HEADER
+========================================================== */
+
+.app-header{background:#fff;border-radius:22px;padding:28px;margin-bottom:24px;box-shadow:var(--shadow)}
+.app-header-content{display:flex;align-items:center;justify-content:center;gap:20px;text-align:center;flex-wrap:wrap}
+.company-logo{width:90px;height:90px;object-fit:contain}
+.company-info{display:flex;flex-direction:column;gap:4px}
+.company-title{margin:0;font-size:30px;font-weight:800;color:var(--dark)}
+.company-tagline{color:var(--primary);font-size:15px;font-weight:600}
+.company-address{color:var(--muted);font-size:14px}
+
+
+/* ==========================================================
+MENU
+========================================================== */
+
+.menu-bar{background:#fff;border-radius:18px;padding:18px 22px;margin-bottom:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;box-shadow:var(--shadow)}
+.session-info{display:flex;align-items:center}
+.badge-session{background:#0f172a;color:#fff;border-radius:999px;padding:10px 18px;font-weight:600;display:flex;gap:10px;align-items:center}
+.menu-action{display:flex;flex-wrap:wrap;gap:12px}
+.btn-menu{border-radius:12px!important;padding:10px 20px;font-weight:600;transition:var(--transition)}
+.btn-menu:hover{transform:translateY(-3px)}
+
+/* ==========================================================
+SUMMARY GRID
+========================================================== */
+
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-bottom:30px}
+
+/* ==========================================================
+SUMMARY CARD
+========================================================== */
+
+.summary-card{position:relative;background:linear-gradient(180deg,#ffffff,#f8fafc);border-radius:22px;padding:28px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);transition:var(--transition)}
+.summary-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover)}
+.summary-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:6px;background:var(--primary)}
+.summary-primary::before{background:#2563eb}
+.summary-success::before{background:#16a34a}
+.summary-warning::before{background:#f59e0b}
+.summary-danger::before{background:#dc2626}
+.summary-info::before{background:#06b6d4}
+.summary-icon{width:65px;height:65px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;margin-bottom:20px}
+.summary-primary .summary-icon{background:#2563eb}
+.summary-success .summary-icon{background:#16a34a}
+.summary-warning .summary-icon{background:#f59e0b}
+.summary-danger .summary-icon{background:#dc2626}
+.summary-info .summary-icon{background:#0ea5e9}
+.summary-value{font-size:34px;font-weight:800;color:var(--dark);margin-bottom:6px}
+.summary-label{font-size:16px;font-weight:700;color:var(--dark)}
+.summary-desc{color:var(--muted);font-size:13px}
+
+
+/* ==========================================================
+CONTENT GRID
+========================================================== */
+
+.dashboard-content{display:grid;grid-template-columns:2fr 1fr;gap:24px;margin-bottom:30px}
+
+/* ==========================================================
+CARD
+========================================================== */
+
+.filter-card,.insight-card,.table-card{background:#fff;border-radius:22px;padding:28px;box-shadow:var(--shadow)}
+
+/* ==========================================================
+SECTION TITLE
+========================================================== */
+
+.section-title{display:flex;align-items:center;gap:10px;margin-bottom:24px;font-size:20px;font-weight:700;color:var(--dark)}
+
+/* ==========================================================
+INSIGHT
+========================================================== */
+
+.insight-item{display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--border)}
+.insight-item:last-child{border-bottom:none}
+.insight-icon{width:58px;height:58px;border-radius:16px;display:flex;justify-content:center;align-items:center;color:#fff;font-size:24px}
+.insight-item strong{display:block;font-size:22px;color:var(--dark)}
+.insight-item small{color:var(--muted)}
+
+/* ==========================================================
+   FILTER FORM
+========================================================== */
+
+.filter-card .form-label{font-weight:600;color:var(--dark);margin-bottom:8px}
+.filter-card .form-control,.filter-card .form-select{border:1px solid var(--border);border-radius:12px;min-height:48px;transition:var(--transition);box-shadow:none}
+.filter-card .form-control:focus,.filter-card .form-select:focus{border-color:var(--primary);box-shadow:0 0 0 .18rem rgb(37 99 235 / .12)}
+.filter-card .btn{border-radius:12px;min-width:120px;font-weight:600}
+
+/* ==========================================================
+TABLE CARD
+========================================================== */
+
+.table-card{overflow:hidden}
+.table-card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;gap:20px;flex-wrap:wrap}
+.table-card-title{font-size:20px;font-weight:700;color:var(--dark)}
+.table-card-subtitle{color:var(--muted);font-size:14px}
+
+
+/* ==========================================================
+TABLE TAB
+========================================================== */
+
+.table-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.table-tab{border:none;background:#fff;border:1px solid var(--border);border-radius:12px;padding:10px 18px;font-weight:600;color:var(--text);transition:var(--transition)}
+.table-tab:hover{background:#eff6ff;color:var(--primary)}
+.table-tab.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+
+
+/* ==========================================================
+TABLE
+========================================================== */
+
+.table-responsive{border-radius:18px}
+.table{margin-bottom:0;vertical-align:middle}
+.table thead th{background:#f8fafc;color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:.04em;font-weight:700;border-bottom:2px solid var(--border);white-space:nowrap}
+.table tbody td{padding:18px 14px;border-color:#eef2f7}
+.table tbody tr{transition:var(--transition)}
+.table tbody tr:hover{background:#f8fbff}
+
+
+/* ==========================================================
+CLIENT
+========================================================== */
+
+.client-info{display:flex;flex-direction:column;gap:5px}
+.client-name{font-weight:700;color:var(--dark);font-size:15px}
+.client-campus{color:var(--muted);font-size:13px}
+.client-phone{color:#94a3b8;font-size:13px}
+.client-phone i{margin-right:5px}
+
+
+/* ==========================================================
+PAYMENT
+========================================================== */
+
+.payment-value{font-weight:700;margin-bottom:6px;color:var(--dark)}
+.progress{height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden}
+.progress-bar{border-radius:999px;transition:width .35s ease}
+.progress-low{background:#dc2626}
+.progress-medium{background:#f59e0b}
+.progress-high{background:#16a34a}
+.progress-text{display:block;margin-top:6px;color:var(--muted);font-size:12px}
+
+
+/* ==========================================================
+BADGE
+========================================================== */
+
+.badge{font-weight:600;padding:8px 12px;border-radius:999px;font-size:12px}
+.badge i{margin-right:4px}
+
+
+/* ==========================================================
+ACTION BUTTON
+========================================================== */
+
+.action-buttons{display:flex;justify-content:center;gap:8px}
+.action-buttons .btn{width:38px;height:38px;padding:0;display:flex;align-items:center;justify-content:center;border-radius:10px}
+.action-buttons .btn i{font-size:15px}
+
+/* ==========================================================
+DATATABLE
+========================================================== */
+
+.dataTables_wrapper{margin-top:10px}
+.dataTables_paginate{margin-top:18px!important}
+.dataTables_info{color:var(--muted);font-size:13px}
+.dataTables_paginate .paginate_button{border-radius:10px!important;margin:0 3px}
+.dataTables_paginate .paginate_button.current{background:var(--primary)!important;color:#fff!important;border:none!important}
+.dataTables_paginate .paginate_button:hover{background:#dbeafe!important;color:var(--primary)!important}
+
+/* ==========================================================
+SEARCH
+========================================================== */
+
+#tableSearch{border-radius:12px;min-height:48px}
+#tableSearch::placeholder{color:#94a3b8}
+
+/* ==========================================================
+UTILITY
+========================================================== */
+
+.shadow-soft{box-shadow:var(--shadow)}
+.rounded-xl{border-radius:20px}
+.text-muted{color:var(--muted)!important}
+
+/* ==========================================================
+SCROLLBAR
+========================================================== */
+
+.table-responsive::-webkit-scrollbar{height:10px}
+.table-responsive::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:999px}
+.table-responsive::-webkit-scrollbar-track{background:#f1f5f9}
+/* ==========================================================
+   MOBILE & TABLET RESPONSIVE
+========================================================== */
+
+@media (max-width:1200px){
+    .dashboard-content{grid-template-columns:1fr}
+    .summary-grid{grid-template-columns:repeat(2,1fr)}
+    .menu-bar{flex-direction:column;align-items:flex-start}
+    .menu-action{width:100%}
+    .menu-action .btn,.menu-action .btn-group{flex:1}
+}
+
+
+/* ==========================================================
+TABLET
+========================================================== */
+
+@media (max-width:992px){
+    .dashboard-container{padding:20px}
+    .company-logo{width:70px;height:70px}
+    .company-title{font-size:24px}
+    .summary-card{padding:22px}
+    .summary-value{font-size:28px}
+    .table thead th{font-size:11px}
+    .table tbody td{padding:14px 10px}
+    .action-buttons{flex-wrap:wrap}
+}
+
+
+/* ==========================================================
+MOBILE
+========================================================== */
+
+@media (max-width:768px){
+    .dashboard-container{padding:15px}
+    .app-header{padding:20px}
+    .app-header-content{flex-direction:column}
+    .company-title{font-size:20px}
+    .company-tagline{font-size:14px}
+    .company-address{font-size:12px}
+    .summary-grid{grid-template-columns:1fr}
+    .summary-card{padding:20px}
+    .summary-value{font-size:26px}
+    .menu-bar{padding:16px}
+    .badge-session{width:100%;justify-content:center}
+    .menu-action{flex-direction:column}
+    .menu-action .btn,.menu-action .btn-group{width:100%}
+    .filter-card,.insight-card,.table-card{padding:18px}
+    .section-title{font-size:18px}
+    .table-tabs{overflow-x:auto;flex-wrap:nowrap;padding-bottom:6px}
+    .table-tabs::-webkit-scrollbar{height:5px}
+    .table-tabs::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:999px}
+    .table-tab{white-space:nowrap}
+    #dataTable{width: 100% !important; min-width: 0 !important;}
+    .table-responsive {overflow-x: visible;}
+    .action-buttons{justify-content:flex-start}
+}
+
+/* ==========================================================
+SMALL MOBILE
+========================================================== */
+
+@media (max-width:480px) {
+    .company-title{font-size:18px}
+    .company-tagline{font-size:13px}
+    .summary-icon{width:55px;height:55px;font-size:22px}
+    .summary-value{font-size:22px}
+    .section-title{font-size:17px}
+    .filter-card .btn{width:100%}
+    .d-flex.gap-2{flex-direction:column}
+}
+
+/* ==========================================================
+FLOATING ACTION BUTTON
+========================================================== */
+
+.fab{position:fixed;right:25px;bottom:25px;width:62px;height:62px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 12px 30px rgb(37 99 235 / .35);transition:var(--transition);z-index:999}
+.fab:hover{transform:translateY(-5px) scale(1.05);color:#fff}
+.fab i{pointer-events:none}
+
+
+/* ==========================================================
+SCROLL TOP
+========================================================== */
+
+#scrollTop{position:fixed;right:25px;bottom:100px;width:52px;height:52px;border:none;border-radius:50%;background:#0f172a;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s ease;z-index:998}
+#scrollTop.show{opacity:1;visibility:visible}
+#scrollTop:hover{transform:translateY(-4px)}
+
+
+/* ==========================================================
+DEADLINE BADGE
+========================================================== */
+
+.deadline{font-weight:600}.deadline.today{color:#dc2626}.deadline.tomorrow{color:#ea580c}.deadline.week{color:#ca8a04}.deadline.normal{color:#334155}.deadline.overdue{color:#b91c1c;font-weight:700}
+
+
+/* ==========================================================
+SMOOTH TRANSITION
+========================================================== */
+
+.btn,.card,.summary-card,.filter-card,.insight-card,.table-card,.table-tab,.progress-bar{transition:all .25s ease}
+
+/* ==========================================================
+FOCUS ACCESSIBILITY
+========================================================== */
+
+button:focus,.btn:focus,.form-control:focus,.form-select:focus{outline:none}
+
+/* ==========================================================
+PRINT
+========================================================== */
+
+@media print{body{background:#fff}.menu-bar,.table-tabs,.fab,#scrollTop{display:none!important}
+.summary-card,.filter-card,.insight-card,.table-card{box-shadow:none;border:1px solid #ddd}}
+
+/* ==========================================================
+   GLASS EFFECT
+========================================================== */
+
+.glass{background:rgb(255 255 255 / .78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgb(255 255 255 / .35)}
+
+/* ==========================================================
+   CARD HOVER PREMIUM
+========================================================== */
+
+.summary-card,.filter-card,.insight-card,.table-card{transition:transform .25s ease,box-shadow .25s ease}
+.summary-card:hover,.filter-card:hover,.insight-card:hover,.table-card:hover{transform:translateY(-4px);box-shadow:0 18px 45px rgb(15 23 42 / .12)}
+
+/* ==========================================================
+   BUTTON
+========================================================== */
+
+.btn{transition:all .25s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--primary);border-color:var(--primary)}
+.btn-primary:hover{background:var(--primary-dark);border-color:var(--primary-dark)}
+
+/* ==========================================================
+   ICON CIRCLE
+========================================================== */
+
+.icon-circle{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#eff6ff;color:var(--primary)}
+
+/* ==========================================================
+   BADGE SOFT
+========================================================== */
+
+.badge-soft-primary{background:#dbeafe;color:#1d4ed8}
+.badge-soft-success{background:#dcfce7;color:#15803d}
+.badge-soft-danger{background:#fee2e2;color:#b91c1c}
+.badge-soft-warning{background:#fef3c7;color:#b45309}
+
+/* ==========================================================
+   ALERT
+========================================================== */
+
+.alert{border:none;border-radius:14px;box-shadow:var(--shadow)}
+
+
+/* ==========================================================
+   DROPDOWN
+========================================================== */
+
+.dropdown-menu{border:none;border-radius:14px;overflow:hidden;box-shadow:0 15px 35px rgb(0 0 0 / .10)}
+.dropdown-item{padding:12px 16px;transition:.2s}
+.dropdown-item:hover{background:#eff6ff}
+
+
+/* ==========================================================
+   FORM
+========================================================== */
+
+.form-control,.form-select{transition:border .2s,box-shadow .2s}
+.form-control:hover,.form-select:hover{border-color:#93c5fd}
+
+
+/* ==========================================================
+   TABLE ROW ANIMATION
+========================================================== */
+
+.table tbody tr{animation:fadeUp .35s ease}@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ==========================================================
+   PROGRESS ANIMATION
+========================================================== */
+
+.progress-bar{animation:progressGrow 1.2s ease}@keyframes progressGrow{from{width:0}}
+
+
+/* ==========================================================
+   LOADING
+========================================================== */
+
+.loading{position:relative;overflow:hidden}
+.loading::after{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgb(255 255 255 / .4),transparent);animation:loading 1.5s infinite}
+@keyframes loading{100%{left:100%}}
+
+/* ==========================================================
+   SHADOW UTILITIES
+========================================================== */
+
+.shadow-xs{box-shadow:0 2px 5px rgb(0 0 0 / .05)}.shadow-sm{box-shadow:0 6px 15px rgb(0 0 0 / .08)}.shadow-lg{box-shadow:0 18px 40px rgb(0 0 0 / .15)}
+
+
+/* ==========================================================
+   BORDER RADIUS
+========================================================== */
+
+.radius-sm{border-radius:10px}.radius{border-radius:16px}.radius-lg{border-radius:24px}
+
+/* ==========================================================
+   SPACING UTILITIES
+========================================================== */
+
+.mt-30{margin-top:30px}.mb-30{margin-bottom:30px}.p-30{padding:30px}
+
+/* ==========================================================
+   TEXT
+========================================================== */
+
+.text-small{font-size:13px}.text-large{font-size:18px}.text-bold{font-weight:700}
+
+
+/* ==========================================================
+   DARK MODE PREPARATION
+========================================================== */
+
+body.dark{--bg:#0f172a;--card:#1e293b;--dark:#f8fafc;--text:#e2e8f0;--muted:#94a3b8;--border:#334155;background:var(--bg);color:var(--text)}
+body.dark .app-header,body.dark .menu-bar,body.dark .summary-card,body.dark .filter-card,body.dark .insight-card,body.dark .table-card{background:var(--card);color:var(--text)}
+body.dark .table thead th{background:#273449}
+body.dark .table tbody tr:hover{background:#243244}
+body.dark .form-control,body.dark .form-select{background:#1e293b;color:#fff;border-color:#475569}
+
+
+/* ==========================================================
+   SELECTION
+========================================================== */
+
+::selection{background:#2563eb;color:#fff}
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:999px}::-webkit-scrollbar-thumb:hover{background:#94a3b8}::-webkit-scrollbar-track{background:#f8fafc}
+
+.table-search-wrapper{width:100%;max-width:320px}
+.payment-column{min-width:220px}
+.action-column{width:170px}
+.client-cell{display:flex;align-items:flex-start;gap:12px;min-width:240px}
+.client-avatar{width:44px;height:44px;flex:0 0 44px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:#dbeafe;color:#1d4ed8;font-size:18px;font-weight:800}
+.client-detail{min-width:0}
+.client-study{color:var(--muted);font-size:13px;margin-top:3px}
+.client-campus i,.client-study i,.client-phone i{width:18px;display:inline-block;margin-right:4px}
+.service-title{color:var(--dark);font-weight:700}
+.service-subtitle{max-width:280px;margin-top:5px;color:var(--muted);font-size:12px;line-height:1.45}
+.money{color:var(--dark);font-weight:700;white-space:nowrap}
+.payment-small{margin-top:5px;color:var(--muted);font-size:12px}
+.payment-small strong{margin-left:4px;color:var(--dark)}
+.deadline-label{font-weight:700}
+.deadline-date{margin-top:3px;color:var(--muted);font-size:12px}
+.empty-state{padding:55px 20px;margin-top:25px;text-align:center;background:#fff;border-radius:22px;box-shadow:var(--shadow)}
+.empty-icon{margin-bottom:16px;color:var(--muted);font-size:54px}
+.empty-state h3{color:var(--dark);font-size:22px;font-weight:700}
+.empty-state p{margin:8px auto 22px;color:var(--muted)}
+
+/* ==========================================================
+   HILANGKAN PANAH DATATABLE
+========================================================== */
+
+@media (max-width: 1920px) {
+
+    table.dataTable.dtr-inline.collapsed
+    > tbody
+    > tr
+    > td.dtr-control::before,
+
+    table.dataTable.dtr-inline.collapsed
+    > tbody
+    > tr
+    > th.dtr-control::before,
+
+    table.dataTable.dtr-inline.collapsed
+    > tbody
+    > tr
+    > td:first-child::before,
+
+    table.dataTable.dtr-inline.collapsed
+    > tbody
+    > tr
+    > th:first-child::before {
+
+        display: none !important;
+        content: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        border: 0 !important;
+        box-shadow: none !important;
+    }
+
+    table.dataTable.dtr-inline.collapsed
+    > tbody
+    > tr
+    > td.dtr-control,
+
+    table.dataTable.dtr-inline.collapsed
+    > tbody
+    > tr
+    > td:first-child {
+
+        padding-left: 14px !important;
+    }
+}
+
+/* ==========================================================
+   HOVER DATA KLIEN
+========================================================== */
+
+
+#dataTable tbody tr:not(.child):hover > td {
+    background-color: #eff6ff !important;
+    border-color: #dbeafe !important;
+}
+
+#dataTable tbody tr:not(.child):hover > td:first-child {
+    box-shadow: inset 4px 0 0 var(--primary);
+}
+
+#dataTable tbody tr:not(.child):hover .client-avatar {
+    transform: scale(1.08);
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, .22);
+}
+
+#dataTable tbody tr:not(.child):hover .client-name {
+    color: var(--primary);
+    transform: translateX(3px);
+}
+
+#dataTable tbody tr:not(.child):hover .action-buttons {
+    transform: translateX(-3px);
+}
+
+/* ==========================================================
+   TOUCH FEEDBACK MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+
+    #dataTable tbody tr:not(.child) {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    #dataTable tbody tr:not(.child):active > td {
+        background-color: #dbeafe !important;
+    }
+
+    #dataTable tbody tr:not(.child):active .client-avatar {
+        transform: scale(.96);
+    }
+
+    #dataTable tbody tr:not(.child):active .client-name {
+        color: var(--primary);
+    }
+}
+
+/* ==========================================================
+   END
+========================================================== */
